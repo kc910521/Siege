@@ -6,9 +6,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>Document</title>
-  <h1>ook1</h1>
 </head>
 <body>
   <script type="text/javascript" src="bundle.js"></script>
+  <script type="text/javascript" src="phaser.min.js"></script>
+  <script type="text/javascript">
+  var game = new Phaser.Game(1000, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create });
+  console.log(game)
+function preload() {
+
+    //  You can fill the preloader with as many assets as your game requires
+
+    //  Here we are loading an image. The first parameter is the unique
+    //  string by which we'll identify the image later in our code.
+
+    //  The second parameter is the URL of the image (relative)
+    console.log("111")
+    game.load.image('einstein', 'googlel.png');
+    console.log("loaddd")
+}
+
+function create() {
+
+    //  This creates a simple sprite that is using our loaded image and
+    //  displays it on-screen
+    var s = game.add.sprite(10, 0, 'einstein');
+    console.log("loaddd2")
+    s.rotation = 0.14;
+}
+  </script>
 </body>
 </html>
